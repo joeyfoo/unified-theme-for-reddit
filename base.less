@@ -1,0 +1,387 @@
+/*  Unity(Dark) theme for reddit by Joey Foo  */
+/*  (github.com/joeyfjj)  */
+
+@bg-base: #292929;
+@bg-main: #383838;
+@bg-side: #2a2a2a;
+@bg-input: #424242;
+@bg-negative: #633;
+
+@text: #bbb;
+@text-hover: #fff;
+@text-blue: #47d;
+@text-green: #4d7;
+@text-blue-hover: #48f;
+@text-visited: #b6f;
+
+@attr-submitter: #66d;
+@attr-moderator: #6d6;
+@attr-admin: #d66;
+
+@border: #555;
+@border-header: #393939;
+
+@spritesheet: url(%%spritesheet%%);
+
+
+/*mixins*/
+.tab(){
+  border-radius: 3px 3px 0 0;
+}
+.textbox(){
+  border: 1px solid @border;
+  color: @text;
+  background-color: @bg-input;
+}
+.button(){
+  border: 1px solid @border;
+  color: @text;
+  border-radius: 3px;
+  background: none;
+  background-color: @bg-input;
+  background-image: linear-gradient(@border 0%, @bg-input 100%);
+}
+.link(){
+  color: @text-blue;
+  &:hover{
+    color: @text-blue-hover;
+    text-decoration: none;
+  }
+}
+.link-text(){
+  color: @text;
+  &:hover{
+    color: @text-hover;
+    text-decoration: none;
+  }
+}
+.link-color(@color){
+  color: @color !important;
+  &:hover{
+    color: lighten(@color, 10%) !important;
+    text-decoration: none;
+  }
+}
+
+/*styles*/
+
+/*general*/
+
+body{
+  color: @text !important;
+  background-color: @bg-main;
+}
+h1,h2,h3,h4,h5,h6{
+  color: @text;
+}
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{
+  .link-text();
+}
+.tagline{
+  .submitter{
+    .link-color(@attr-submitter);
+  }
+  .moderator{
+    .link-color(@attr-moderator);
+  }
+  .admin{
+    .link-color(@attr-admin);
+  }
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  .button();
+}
+
+/*header*/
+
+#sr-header-area{
+  background-image: linear-gradient(#fff 0%, #e0e0e0 10%, #bbb 90%, #6c6c6c 100%);
+}
+#header{
+  background-color: @bg-base;
+  border-color: @border;
+}
+#header-bottom-left{
+  margin: 5px;
+}
+#header-bottom-right {
+    position: absolute;
+    right: 0px;
+    top: 18px;
+    background-color: transparent;
+  a{
+    .link-text();
+  }
+  .seperator{
+    color: @text;
+  }
+  .user{
+    color: @text;
+    .userkarma{
+      border-bottom: 1px dotted @text;
+    }
+  }
+  #mail{
+    background-image: @spritesheet !important;
+  }
+  #modmail{
+    background-image: @spritesheet !important;
+  }
+}
+#header-img-a{
+  display: inline-block;
+  img{
+    vertical-align: sub;
+  }
+}
+.pagename{
+  font-weight: normal;
+  font-variant: normal;
+  font-size: 20px;
+}
+.pagename a{
+    .link-text();
+  &:before{
+    content: '/r/';
+  }
+}
+
+.tabmenu, .tabmenu.formtab{
+  display: block;
+  position: relative;
+  top: 5px;
+  .choice, a, #viewImagesButton{
+    .link-text();
+    font-size: 100%;
+    padding-left: 8px;
+    padding-right: 32px;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    background-color: transparent;
+  }
+  .selected .choice, .selected a{
+    .tab();
+    color: @text;
+    font-size: 100%;
+    font-weight: bold;
+    border: 1px solid @border;
+    border-bottom-color: @bg-main;
+    background-color: @border;
+    background-image: linear-gradient(@border 0%, @bg-main 100%);
+  }
+}
+
+
+/*things*/
+
+.thing{ 
+  .title{
+    .link();
+    &:visited{
+      color: @text-visited;
+    }
+    .domain
+    {
+      color: @text;
+      .link-text();
+    }
+  }
+  .tagline{
+    color: @text;
+    a{
+      .link();
+    }
+  }
+  .spam{
+    background-color: @bg-negative;
+  }
+}
+.thing.stickied a.title{
+  color: @text-green;
+}
+.thing.visited .title{
+  color: @text-visited;
+}
+.entry .buttons li a{
+  .link-text();
+}
+.link.last-clicked {
+  border: 1px dashed @border;
+}
+.link .usertext .md {
+  background-color: @bg-side;
+  color: @text;
+  border: 1px solid @border;
+  border-radius: 5px;
+}
+.thumbnail.self{
+  background-image: @spritesheet;
+}
+.nextprev a, .next-suggestions a{
+  .button();
+}
+
+/*sidebar*/
+
+.side{
+  background-color: @bg-side;
+  color: @text;
+  width: 288px;
+  padding: 0 16px;
+  a{
+    .link();
+  }
+  #search input[type="text"]{
+    .textbox();
+    width: 100%;
+  }
+  .infobar{
+    .textbox();
+    a{
+      .link();
+    }
+  }
+  .linkinfo{
+    .textbox();
+    a{
+      .link();
+    }
+    .shortlink input {
+      .textbox();
+      font-size: 100%;
+    }
+  }
+  .morelink{
+    .button();
+    a{
+      .link-text();
+      font-weight: normal;
+    }
+    .nub{
+      display: none;
+    }
+  }
+  .titlebox{
+    h1 a{
+      .link-text();
+    }
+    form.toggle, .leavemoderator{
+      background: none;
+    }
+  }
+  .sidebox {
+    .spacer{
+      .textbox();
+    }
+    .subtitle{
+      color: @text;
+    }
+  }
+  .sidecontentbox .content{
+    .textbox();
+  }
+  
+  .gadget small{
+    color: @text;
+  }
+  #moderation-tools{
+    .content{
+      .textbox();
+    }
+  }
+}
+#search input[type="submit"]{
+  background-image: @spritesheet;
+}
+.login-form-side input[type="text"], .login-form-side input[type="password"]{
+  .textbox();
+}
+.login-form-side .submit *, .user-form .submit *{
+  .button();
+}
+
+/*form*/
+
+.formtabs-content{
+  border-top: 1px solid @border;
+  margin-top: 6px;
+  padding-top: 12px;
+  .infobar{
+    .textbox();
+  }
+  .roundfield{
+    clear: left;
+    background-color: @bg-main;
+    border: none;
+    .roundfield-content{
+      border: none;
+    }
+    textarea, input[type="text"], input[type="url"], input[type="password"], input[type="number"] {
+      .textbox();
+    }
+    #url-field button{
+      .button();
+    }
+  }
+}
+ul.tabmenu.formtab{
+  padding-left: 0;
+}
+#suggested-reddits{
+  font-size: 56%;
+}
+.submit_text h1{
+  color: @text;
+}
+.content.submit .info-notice {
+  .textbox();
+}
+
+
+/*footer*/
+
+.footer {
+  .textbox();
+}
+
+/*others*/
+
+.sheets .col textarea {
+    width: 95%;
+}
+.icon-menu a{
+  background: transparent;
+}
+.expando-button{
+  background-color: @bg-main;
+}
+.expando-button.selftext.collapsed, .expando-button.selftext.collapsed:hover,.eb-sch, .expando-button.selftext.expanded,.eb-se, .expando-button.selftext.expanded:hover,.eb-seh, .expando-button.video.collapsed, .expando-button.video.collapsed:hover,.eb-vch, .expando-button.video.expanded,.eb-ve, .expando-button.video.expanded:hover,.eb-veh{
+	background-image: @spritesheet;
+}
+.linefield{
+  background-color: @bg-side;
+  .title, .gray{
+    color: @text;
+  }
+}
+
+/*res*/
+.res .RES-keyNav-activeElement, .res .comment .RES-keyNav-activeElement{
+  background-color: @bg-side !important;
+}
+html.res-commentBoxes .comment .comment,
+html.res-commentBoxes .comment .comment .comment,
+html.res-commentBoxes .comment .comment .comment .comment,
+html.res-commentBoxes .comment .comment .comment .comment .comment,
+html.res-commentBoxes .comment .comment .comment .comment .comment .comment,
+html.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment,
+html.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment,
+html.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment .comment,
+html.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment,
+html.res-commentBoxes .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment .comment{
+  background: @bg-main !important;
+}
+html span.score{
+  color: @text !important;
+}
