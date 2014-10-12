@@ -1,6 +1,6 @@
 unified-theme-for-reddit
 ========================
-version 0.90
+version 0.91
 by [Joey Foo](https://github.com/joeyfoo/)
 https://github.com/joeyfoo/unified-theme-for-reddit
 
