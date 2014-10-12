@@ -1,7 +1,8 @@
 unified-theme-for-reddit
 ========================
 version 0.90
-by [Joey Foo](https://github.com/joeyfoo/)  
+by [Joey Foo](https://github.com/joeyfoo/)
+https://github.com/joeyfoo/unified-theme-for-reddit
 
 -----
 
@@ -9,7 +10,7 @@ Unified is a simple subreddit theme for reddit, inspired by the Unity game engin
 
 You can preview Unified at [/r/UnifiedTheme](https://www.reddit.com/r/UnifiedTheme/). 
 
-![/r/UnifiedTheme (looking empty)](http://i.imgur.com/qAhvxre.png)
+![/r/UnifiedTheme (looking empty)](http://i.imgur.com/hpp60W5.png)
 
 
 Using Unified on your subreddit
