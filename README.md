@@ -16,7 +16,7 @@ You can preview Unified at [/r/UnifiedTheme](https://www.reddit.com/r/UnifiedThe
 Using Unified on your subreddit
 -------------------------------
 
-1. Download the zipped file under [releases](https://github.com/joeyfoo/unified-theme-for-reddit/releases). 
+1. Download the zip file from [releases](https://github.com/joeyfoo/unified-theme-for-reddit/releases). This contains the minified CSS file and a spritesheet. 
 
 1. Go to the edit stylesheet page of your subreddit at ``/r/<subreddit>/about/stylesheet/``. 
 
