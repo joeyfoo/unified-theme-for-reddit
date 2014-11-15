@@ -1,26 +1,3 @@
-/*  Unity(Dark) theme (version 0.91) by Joey Foo  */
-/*  (github.com/joeyfjj)  */
-
-@bg-base: #292929;
-@bg-main: #383838;
-@bg-side: #2a2a2a;
-@bg-input: #424242;
-@bg-negative: #633;
-
-@text: #bbb;
-@text-hover: #fff;
-@text-blue: #47d;
-@text-green: #4d7;
-@text-blue-hover: #48f;
-@text-visited: #b6f;
-
-@attr-submitter: #66d;
-@attr-moderator: #6d6;
-@attr-admin: #d66;
-
-@border: #555;
-@border-header: #393939;
-
 @spritesheet: url(%%spritesheet%%);
 
 
@@ -39,17 +16,19 @@
   border-radius: 3px;
   background: none;
   background-color: @bg-input;
-  background-image: linear-gradient(@border 0%, @bg-input 100%);
+  background-image: linear-gradient(@bg-button-start 0%, @bg-button-end 100%);
 }
 .link(){
   color: @text-blue;
+  font-weight: normal;
   &:hover{
     color: @text-blue-hover;
     text-decoration: none;
   }
 }
 .link-text(){
-  color: @text;
+  color: @text-subtle;
+  font-weight: normal;
   &:hover{
     color: @text-hover;
     text-decoration: none;
@@ -57,6 +36,7 @@
 }
 .link-color(@color){
   color: @color !important;
+  font-weight: normal;
   &:hover{
     color: lighten(@color, 10%) !important;
     text-decoration: none;
@@ -156,7 +136,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     padding-left: 8px;
     padding-right: 32px;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: normal;
     border: 1px solid transparent;
     background-color: transparent;
   }
@@ -164,11 +144,11 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     .tab();
     color: @text;
     font-size: 100%;
-    font-weight: bold;
+    font-weight: normal;
     border: 1px solid @border;
     border-bottom-color: @bg-main;
     background-color: @border;
-    background-image: linear-gradient(@border 0%, @bg-main 100%);
+    background-image: linear-gradient(@bg-tab-start 0%, @bg-main 100%);
   }
 }
 
@@ -219,7 +199,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   background-image: @spritesheet;
 }
 .nextprev a, .next-suggestions a{
-  .button();
+  .button();  
 }
 
 /*sidebar*/
@@ -231,6 +211,11 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   padding: 0 16px;
   a{
     .link();
+  }
+  blockquote{
+    .textbox();
+    border-radius: 3px;
+    padding: 6px 12px;
   }
   #search input[type="text"]{
     .textbox();
@@ -368,7 +353,10 @@ ul.tabmenu.formtab{
 
 /*res*/
 .res .RES-keyNav-activeElement, .res .comment .RES-keyNav-activeElement{
-  background-color: @bg-side !important;
+  background-color: @bg-selection !important;
+}
+div .RES-keyNav-activeElement, div .commentarea .RES-keyNav-activeElement .md, div .commentarea .RES-keyNav-activeElement.entry .noncollapsed{
+  background: transparent !important;
 }
 html.res-commentBoxes .comment .comment,
 html.res-commentBoxes .comment .comment .comment,
