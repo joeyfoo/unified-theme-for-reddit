@@ -1,10 +1,16 @@
 unified-theme-for-reddit
 ========================
-version 0.91
+version _____
 by [Joey Foo](https://github.com/joeyfoo/)
 https://github.com/joeyfoo/unified-theme-for-reddit
 
 -----
+
+The ``master`` branch is (for now) used as the development branch. 
+
+This theme is not ready for use yet: we're getting there though!
+
+----
 
 Unified is a simple subreddit theme for reddit, inspired by the Unity game engine and /r/Unity3D. 
 
