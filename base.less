@@ -51,6 +51,9 @@ body{
   color: @text !important;
   background-color: @bg-main;
 }
+a{
+  .link()
+}
 h1,h2,h3,h4,h5,h6{
   color: @text;
 }
@@ -177,10 +180,13 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     background-color: @bg-negative;
   }
 }
+div .comment .md p > a:visited{
+  color: @text-visited;
+}
 .thing.stickied a.title{
   color: @text-green;
 }
-.thing.visited .title{
+.thing.visited .title, .thing .title:visited{
   color: @text-visited;
 }
 .entry .buttons li a{
@@ -200,6 +206,10 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 }
 .nextprev a, .next-suggestions a{
   .button();  
+}
+.usertext.border .usertext-body, .infobar{
+  background-color: rgba(255,128,0,0.25);
+  border: none;
 }
 
 /*sidebar*/
