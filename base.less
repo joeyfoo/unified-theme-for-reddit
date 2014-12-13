@@ -124,9 +124,11 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
   font-weight: normal;
   font-variant: normal;
   font-size: 20px;
+  color: @text-redditname;
 }
 .pagename a{
-    .link-text();
+  .link-text();
+  color: @text-redditname;
   &:before{
     content: '/r/';
   }
@@ -156,6 +158,14 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
     background-color: @border;
     background-image: linear-gradient(@bg-tab-start 0%, @bg-main 100%);
   }
+}
+
+.spacer .submit_text .roundfield .enabled {
+  border: 1px solid red !important;
+}
+.submit_text h1 {
+    font-weight: normal;
+    font-size: 18px;
 }
 
 
@@ -191,7 +201,7 @@ div .comment .md p > a:visited{
 }
 .thing.visited .title, .thing .title:visited{
   color: @text-visited;
-}
+} 
 .entry .buttons li a{
   .link-text();
 }
@@ -229,6 +239,23 @@ div .comment .md p > a:visited{
     .textbox();
     border-radius: 3px;
     padding: 6px 12px;
+  }
+  em{
+    color: @text-subtle;
+    font-size: 10px;
+    font-style: normal;
+  }
+  h2{
+    font-size: 14px;
+    a{
+      font-size: 10px;
+      font-weight: bold;
+      padding-left: 12px;
+      text-transform: uppercase;
+    }
+  }
+  hr{
+    border-color: transparent;
   }
   #search input[type="text"]{
     .textbox();
@@ -315,9 +342,6 @@ div .comment .md p > a:visited{
     .roundfield-content{
       border: none;
     }
-    textarea, input[type="text"], input[type="url"], input[type="password"], input[type="number"] {
-      .textbox();
-    }
     #url-field button{
       .button();
     }
@@ -333,6 +357,9 @@ ul.tabmenu.formtab{
   color: @text;
 }
 .content.submit .info-notice {
+  .textbox();
+}
+textarea, input[type="text"], input[type="url"], input[type="password"], input[type="number"] {
   .textbox();
 }
 
